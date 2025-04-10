@@ -1,3 +1,4 @@
+
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 const Navbar = () => {
@@ -21,6 +22,9 @@ const Navbar = () => {
           </NavLink>
           <NavLink to="/properties" isActive={isActive("/properties")}>
             Properties
+          </NavLink>
+          <NavLink to="/the-valley" isActive={isActive("/the-valley")}>
+            The Valley
           </NavLink>
           <NavLink to="/contact" isActive={isActive("/contact")}>
             Contact Us
