@@ -25,11 +25,42 @@ const TheValley = () => {
 
   useEffect(() => {
     // Ensure video plays when component mounts
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Error attempting to play video:", error);
-      });
-    }
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          // Add a small delay to ensure DOM is fully loaded
+          await new Promise(resolve => setTimeout(resolve, 100));
+          await videoRef.current.play();
+          console.log("Video playback started successfully");
+        } catch (error) {
+          console.error("Error attempting to play video:", error);
+          
+          // Try again with user interaction simulation
+          document.addEventListener('click', () => {
+            videoRef.current?.play().catch(e => 
+              console.error("Failed to play on user interaction:", e)
+            );
+          }, { once: true });
+        }
+      }
+    };
+    
+    playVideo();
+    
+    // Add visibility change listener to resume playback when tab becomes visible
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && videoRef.current) {
+        videoRef.current.play().catch(err => 
+          console.error("Failed to resume on visibility change:", err)
+        );
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
   }, []);
 
   return (
@@ -49,6 +80,20 @@ const TheValley = () => {
           <source src="/lovable-uploads/valley 2-1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        
+        {/* Fallback image in case video fails to load */}
+        <img 
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+          alt="The Valley" 
+          className="absolute inset-0 w-full h-full object-cover opacity-0"
+          onError={(e) => {
+            if (videoRef.current?.error) {
+              console.log("Video failed, showing fallback image");
+              e.currentTarget.classList.remove('opacity-0');
+            }
+          }}
+        />
+        
         <div className="container-custom relative z-20 h-full flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-6xl md:text-8xl font-playfair font-bold text-white mb-6 drop-shadow-lg">
             The Valley
