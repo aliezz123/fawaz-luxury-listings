@@ -1,25 +1,51 @@
 
 import { Link } from "react-router-dom";
+import { Mail, Phone, MessageSquare } from "lucide-react";
 
 const CallToAction = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-fawaz-dark to-fawaz-darker">
+    <section className="py-20 bg-black">
       <div className="container-custom text-center">
-        <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-6">
-          Ready to Find Your Perfect Property?
+        <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
+          Ready to Find Your Dream Property?
         </h2>
-        <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-          Let our experts guide you through the process of finding and securing 
-          your ideal property in Sierra Leone.
+        <p className="text-gray-300 max-w-2xl mx-auto mb-12">
+          Our team of experienced agents is ready to assist you with finding the perfect property
+          that meets your needs and budget.
         </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link to="/properties" className="gold-btn">
-            Browse Properties
-          </Link>
-          <Link to="/contact" className="dark-btn">
-            Contact Us
-          </Link>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
+          {/* Call Us Box */}
+          <div className="bg-zinc-900 p-6 rounded-sm border border-zinc-800 flex flex-col items-center">
+            <div className="bg-transparent w-12 h-12 flex items-center justify-center mb-4">
+              <Phone className="text-fawaz-gold w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-semibold mb-1">Call Us</h3>
+            <p className="text-fawaz-gold">+232 76 000 000</p>
+          </div>
+          
+          {/* WhatsApp Box */}
+          <div className="bg-zinc-900 p-6 rounded-sm border border-zinc-800 flex flex-col items-center">
+            <div className="bg-transparent w-12 h-12 flex items-center justify-center mb-4">
+              <MessageSquare className="text-fawaz-gold w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-semibold mb-1">WhatsApp</h3>
+            <p className="text-gray-400">Quick Chat</p>
+          </div>
+          
+          {/* Email Box */}
+          <div className="bg-zinc-900 p-6 rounded-sm border border-zinc-800 flex flex-col items-center">
+            <div className="bg-transparent w-12 h-12 flex items-center justify-center mb-4">
+              <Mail className="text-fawaz-gold w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-semibold mb-1">Email</h3>
+            <p className="text-gray-300">info@fawazrealestate.com</p>
+          </div>
         </div>
+        
+        <Link to="/contact" className="gold-btn inline-block">
+          Contact Us
+        </Link>
       </div>
     </section>
   );
