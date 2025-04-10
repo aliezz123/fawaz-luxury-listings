@@ -1,11 +1,13 @@
 
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
+
 const Navbar = () => {
   const location = useLocation();
   const isActive = (path: string) => {
     return location.pathname === path;
   };
+  
   return <nav className="bg-fawaz-darker py-4">
       <div className="container-custom flex flex-col md:flex-row justify-between items-center">
         <Link to="/" className="flex items-center mb-4 md:mb-0">
@@ -26,6 +28,9 @@ const Navbar = () => {
           <NavLink to="/the-valley" isActive={isActive("/the-valley")}>
             The Valley
           </NavLink>
+          <NavLink to="/extract" isActive={isActive("/extract")}>
+            Extractor
+          </NavLink>
           <NavLink to="/contact" isActive={isActive("/contact")}>
             Contact Us
           </NavLink>
@@ -33,6 +38,7 @@ const Navbar = () => {
       </div>
     </nav>;
 };
+
 const NavLink = ({
   children,
   to,
@@ -46,4 +52,5 @@ const NavLink = ({
       {children}
     </Link>;
 };
+
 export default Navbar;
