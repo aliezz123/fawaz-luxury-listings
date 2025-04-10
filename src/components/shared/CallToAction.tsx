@@ -1,5 +1,7 @@
+
 import { Link } from "react-router-dom";
 import { Mail, Phone, MessageSquare } from "lucide-react";
+
 const CallToAction = () => {
   return <section className="py-20 bg-black">
       <div className="container-custom text-center">
@@ -22,13 +24,18 @@ const CallToAction = () => {
           </div>
           
           {/* WhatsApp Box */}
-          <div className="bg-zinc-900 p-6 rounded-sm border border-zinc-800 flex flex-col items-center">
+          <a 
+            href="https://wa.me/447747417544?text=Hello%2C%20I%27m%20interested%20in%20a%20property.%20Could%20you%20please%20help%20me%20find%20more%20details%3F" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-zinc-900 p-6 rounded-sm border border-zinc-800 flex flex-col items-center hover:border-fawaz-gold/30 transition-colors"
+          >
             <div className="bg-transparent w-12 h-12 flex items-center justify-center mb-4">
               <MessageSquare className="text-fawaz-gold w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold mb-1">WhatsApp</h3>
             <p className="text-gray-400">Quick Chat</p>
-          </div>
+          </a>
           
           {/* Email Box */}
           <div className="bg-zinc-900 p-6 rounded-sm border border-zinc-800 flex flex-col items-center">
@@ -46,4 +53,5 @@ const CallToAction = () => {
       </div>
     </section>;
 };
+
 export default CallToAction;
