@@ -6,7 +6,7 @@ const HeroSection = () => {
     <section className="relative h-[80vh] flex items-center bg-gradient-to-b from-black/60 to-black/20">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+          src="/lovable-uploads/3006898c-4c1c-43f7-a52c-0d1356b35f78.png"
           alt="Luxury Properties in Sierra Leone"
           className="w-full h-full object-cover"
         />
