@@ -33,7 +33,7 @@ const TheValley = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://player.vimeo.com/external/517090025.hd.mp4?s=539faad12f040eb5afd8d5b3c3603561bc344cad&profile_id=175" type="video/mp4" />
+          <source src="/lovable-uploads/valley 2-1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="container-custom relative z-20 h-full flex flex-col items-center justify-center text-center px-4">
