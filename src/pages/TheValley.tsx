@@ -75,7 +75,7 @@ const TheValley = () => {
           loop 
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          preload="auto"
+          preload="metadata"
         >
           <source src="/lovable-uploads/valley 2-1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
