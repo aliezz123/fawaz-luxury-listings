@@ -3,95 +3,237 @@ import React from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
+import { 
+  Home,
+  Building,
+  Briefcase, 
+  Users,
+  MapPin
+} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import CallToAction from "@/components/shared/CallToAction";
 
 const TheValley = () => {
   return (
     <Layout>
-      {/* Hero Section with Large Background Image */}
-      <div className="relative h-[80vh] bg-zinc-800 overflow-hidden">
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
+      {/* Hero Section with Background Video and Overlay */}
+      <div className="relative h-[80vh] overflow-hidden">
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
         <img 
-          src="public/lovable-uploads/c441e6d9-4686-4485-9c26-0aa53a790dcc.png" 
+          src="/lovable-uploads/55b5e92a-ad52-40e2-af95-7fae7e875755.png" 
           alt="The Valley Development" 
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="container-custom relative z-20 h-full flex items-center justify-center">
-          <h1 className="text-7xl md:text-8xl font-playfair font-bold text-white text-center drop-shadow-lg">
+        <div className="container-custom relative z-20 h-full flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-6xl md:text-8xl font-playfair font-bold text-white mb-6 drop-shadow-lg">
             The Valley
           </h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto font-light">
+            A modern, luxurious community of villas, apartments, offices, and conference facilities.
+          </p>
         </div>
       </div>
 
-      {/* Development Description Section */}
-      <div className="py-16 bg-black">
+      {/* Property Types Section */}
+      <section className="py-20 bg-black">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <img 
-                src="public/lovable-uploads/c441e6d9-4686-4485-9c26-0aa53a790dcc.png" 
-                alt="The Valley Development View" 
-                className="w-full h-auto rounded-sm shadow-lg"
-              />
-            </div>
-            <div>
-              <h2 className="text-4xl font-playfair font-semibold text-fawaz-gold mb-6">
-                Exclusive Valley Development
-              </h2>
-              <p className="text-fawaz-light text-lg mb-6">
-                Explore acivillas, premium apartments, and breathtaking views 
-                inexted in nature.
-              </p>
-              <p className="text-fawaz-light text-lg mb-8">
-                Feature scieetic apactise rich aw geting rang of exntripbocting
-                space stortic aciass of sciass funners deaptional naturizons,
-                and natural surroundings int olum. nature.
-              </p>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
-                <div className="bg-zinc-900 p-6 rounded-sm">
-                  <h3 className="text-xl font-semibold text-fawaz-gold mb-2">Location</h3>
-                  <p className="text-fawaz-light">Seneria Sterro, Hills View</p>
-                </div>
-                <div className="bg-zinc-900 p-6 rounded-sm">
-                  <h3 className="text-xl font-semibold text-fawaz-gold mb-2">Property Type:</h3>
-                  <p className="text-fawaz-light">Vilaa, apartments, penthouses</p>
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-center mb-4 text-white">
+            Explore Our Spaces
+          </h2>
+          <p className="text-lg text-gray-300 text-center mb-16 max-w-3xl mx-auto">
+            Discover our diverse range of premium spaces designed to meet your needs
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Luxury Villas Card */}
+            <Card className="bg-zinc-900 border-zinc-800 hover:border-fawaz-gold/30 transition-all overflow-hidden rounded-sm">
+              <div className="h-48 overflow-hidden relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1613977257363-707ba9348227" 
+                  alt="Luxury Villa" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-black/70 p-2 rounded-full">
+                  <Home className="text-fawaz-gold h-5 w-5" />
                 </div>
               </div>
-              
-              <div className="bg-zinc-900 p-6 rounded-sm mb-6">
-                <h3 className="text-xl font-semibold text-fawaz-gold mb-2">Amenities</h3>
-                <p className="text-fawaz-light">Cudthouse, pool, parks, 24/7 security</p>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-playfair font-semibold text-fawaz-gold mb-2">Luxury Villas</h3>
+                <p className="text-gray-300 text-sm">
+                  Spacious, architect-designed homes with private gardens and premium finishes.
+                </p>
+              </CardContent>
+            </Card>
+            
+            {/* Premium Apartments Card */}
+            <Card className="bg-zinc-900 border-zinc-800 hover:border-fawaz-gold/30 transition-all overflow-hidden rounded-sm">
+              <div className="h-48 overflow-hidden relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00" 
+                  alt="Premium Apartment" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-black/70 p-2 rounded-full">
+                  <Building className="text-fawaz-gold h-5 w-5" />
+                </div>
               </div>
-            </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-playfair font-semibold text-fawaz-gold mb-2">Premium Apartments</h3>
+                <p className="text-gray-300 text-sm">
+                  Elegant living spaces with panoramic views and modern amenities.
+                </p>
+              </CardContent>
+            </Card>
+            
+            {/* Office Spaces Card */}
+            <Card className="bg-zinc-900 border-zinc-800 hover:border-fawaz-gold/30 transition-all overflow-hidden rounded-sm">
+              <div className="h-48 overflow-hidden relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" 
+                  alt="Office Space" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-black/70 p-2 rounded-full">
+                  <Briefcase className="text-fawaz-gold h-5 w-5" />
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-playfair font-semibold text-fawaz-gold mb-2">Office Spaces</h3>
+                <p className="text-gray-300 text-sm">
+                  Professional environments designed for productivity and collaboration.
+                </p>
+              </CardContent>
+            </Card>
+            
+            {/* Conference Facilities Card */}
+            <Card className="bg-zinc-900 border-zinc-800 hover:border-fawaz-gold/30 transition-all overflow-hidden rounded-sm">
+              <div className="h-48 overflow-hidden relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205" 
+                  alt="Conference Facility" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-4 left-4 bg-black/70 p-2 rounded-full">
+                  <Users className="text-fawaz-gold h-5 w-5" />
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-playfair font-semibold text-fawaz-gold mb-2">Conference Facilities</h3>
+                <p className="text-gray-300 text-sm">
+                  State-of-the-art meeting spaces equipped with the latest technology.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Gallery Section */}
-      <section className="py-16 bg-black">
+      <section className="py-20 bg-black">
         <div className="container-custom">
-          <h2 className="text-4xl font-playfair font-bold text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-center mb-16">
             Valley Project Gallery
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="aspect-square overflow-hidden rounded-sm">
-              <img 
-                src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" 
-                alt="Modern villa exterior" 
-                className="w-full h-full object-cover"
-              />
+          
+          <Carousel className="w-full max-w-6xl mx-auto">
+            <CarouselContent>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div className="aspect-square overflow-hidden rounded-sm">
+                    <img 
+                      src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" 
+                      alt="Modern villa exterior" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div className="aspect-square overflow-hidden rounded-sm">
+                    <img 
+                      src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea" 
+                      alt="Luxury apartment interior" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div className="aspect-square overflow-hidden rounded-sm">
+                    <img 
+                      src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" 
+                      alt="Modern kitchen design" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div className="aspect-square overflow-hidden rounded-sm">
+                    <img 
+                      src="https://images.unsplash.com/photo-1600607687644-c7171b42498f" 
+                      alt="Living room with view" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <div className="aspect-square overflow-hidden rounded-sm">
+                    <img 
+                      src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3" 
+                      alt="Modern bathroom" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious className="left-2 bg-black/50 border-fawaz-gold/50 text-fawaz-gold hover:bg-black/70" />
+            <CarouselNext className="right-2 bg-black/50 border-fawaz-gold/50 text-fawaz-gold hover:bg-black/70" />
+          </Carousel>
+        </div>
+      </section>
+
+      {/* Location Map Section */}
+      <section className="py-20 bg-zinc-950">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-playfair font-bold mb-6 text-white">
+                Find Us
+              </h2>
+              <p className="text-gray-300 mb-8">
+                The Valley is strategically located in the heart of Seneria Sterro with easy access to major highways, shopping centers, and entertainment venues.
+              </p>
+              
+              <div className="flex items-center mb-4">
+                <MapPin className="text-fawaz-gold mr-3" />
+                <span className="text-white">Seneria Sterro, Hills View</span>
+              </div>
+              
+              <div className="mt-8">
+                <Link to="/contact" className="inline-flex items-center border border-fawaz-gold text-fawaz-gold px-6 py-3 rounded-sm hover:bg-fawaz-gold hover:text-black transition-colors">
+                  Get Directions
+                </Link>
+              </div>
             </div>
-            <div className="aspect-square overflow-hidden rounded-sm">
+            
+            <div className="rounded-sm overflow-hidden border border-zinc-800">
               <img 
-                src="https://images.unsplash.com/photo-1551038247-3d9af20df552" 
-                alt="Hillside development" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="aspect-square overflow-hidden rounded-sm">
-              <img 
-                src="https://images.unsplash.com/photo-1466442929976-97f336a657be" 
-                alt="Property with pool" 
+                src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d" 
+                alt="The Valley location" 
                 className="w-full h-full object-cover"
               />
             </div>
@@ -99,22 +241,8 @@ const TheValley = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-black text-center">
-        <div className="container-custom">
-          <h2 className="text-5xl font-playfair font-bold mb-6">
-            Ready to Find Your Dream Property?
-          </h2>
-          <p className="text-fawaz-light text-lg mb-10 max-w-2xl mx-auto">
-            Connect with our experienced agents to explour rating purchasing option.
-          </p>
-          <Link to="/contact">
-            <Button className="bg-fawaz-gold text-fawaz-darker hover:bg-fawaz-gold/90 py-6 px-10 text-lg">
-              Contact Us
-            </Button>
-          </Link>
-        </div>
-      </section>
+      {/* CTA Section - Using the shared component */}
+      <CallToAction />
     </Layout>
   );
 };
