@@ -26,6 +26,9 @@ const Navbar = () => {
           <NavLink to="/the-valley" isActive={isActive("/the-valley")}>
             The Valley
           </NavLink>
+          <NavLink to="/extract" isActive={isActive("/extract")}>
+            Extractor
+          </NavLink>
           <NavLink to="/contact" isActive={isActive("/contact")}>
             Contact Us
           </NavLink>
