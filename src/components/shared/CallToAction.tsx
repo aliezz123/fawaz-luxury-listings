@@ -1,10 +1,7 @@
-
 import { Link } from "react-router-dom";
 import { Mail, Phone, MessageSquare } from "lucide-react";
-
 const CallToAction = () => {
-  return (
-    <section className="py-20 bg-black">
+  return <section className="py-20 bg-black">
       <div className="container-custom text-center">
         <h2 className="text-4xl md:text-5xl font-playfair font-bold mb-6">
           Ready to Find Your Dream Property?
@@ -21,7 +18,7 @@ const CallToAction = () => {
               <Phone className="text-fawaz-gold w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold mb-1">Call Us</h3>
-            <p className="text-fawaz-gold">+232 76 000 000</p>
+            <p className="text-fawaz-gold">+232 74 155 291</p>
           </div>
           
           {/* WhatsApp Box */}
@@ -47,8 +44,6 @@ const CallToAction = () => {
           Contact Us
         </Link>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CallToAction;
