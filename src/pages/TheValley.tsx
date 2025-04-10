@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -21,17 +21,30 @@ import { Card, CardContent } from "@/components/ui/card";
 import CallToAction from "@/components/shared/CallToAction";
 
 const TheValley = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Ensure video plays when component mounts
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Error attempting to play video:", error);
+      });
+    }
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section with Background Video and Overlay */}
       <div className="relative h-[80vh] overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         <video 
+          ref={videoRef}
           autoPlay 
           muted 
           loop 
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          preload="auto"
         >
           <source src="/lovable-uploads/valley 2-1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
