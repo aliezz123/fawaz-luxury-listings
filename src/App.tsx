@@ -13,7 +13,6 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import TheValley from "./pages/TheValley";
 import NotFound from "./pages/NotFound";
-import WebsiteExtractionPage from "./pages/WebsiteExtractionPage";
 
 const App = () => {
   // Create a client inside the component to ensure React context is properly used
@@ -33,7 +32,6 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/the-valley" element={<TheValley />} />
-            <Route path="/extract" element={<WebsiteExtractionPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
