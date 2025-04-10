@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { 
@@ -7,7 +6,7 @@ import {
   Bath, 
   MapPin, 
   Home, 
-  SquareFeet, 
+  SquareIcon, 
   Calendar, 
   Tag, 
   Building,
@@ -17,7 +16,6 @@ import {
 import CallToAction from "@/components/shared/CallToAction";
 import { useEffect, useState } from "react";
 
-// Mock data for properties (same as in Properties.tsx)
 const allProperties = [
   {
     id: 1,
@@ -109,7 +107,6 @@ const PropertyDetails = () => {
   const [loading, setLoading] = useState<boolean>(true);
   
   useEffect(() => {
-    // In a real app, you would fetch data from an API
     const foundProperty = allProperties.find(p => p.id === Number(id));
     
     if (foundProperty) {
@@ -148,7 +145,6 @@ const PropertyDetails = () => {
   return (
     <Layout>
       <div className="pt-16 pb-24">
-        {/* Back Button */}
         <div className="container-custom mb-8">
           <Link to="/properties" className="flex items-center text-fawaz-gold hover:underline">
             <ArrowLeft size={20} className="mr-2" />
@@ -156,7 +152,6 @@ const PropertyDetails = () => {
           </Link>
         </div>
         
-        {/* Property Title and Price */}
         <div className="container-custom mb-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
             <div>
@@ -176,7 +171,6 @@ const PropertyDetails = () => {
           </div>
         </div>
         
-        {/* Property Images */}
         <div className="container-custom mb-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="md:col-span-3">
@@ -210,10 +204,8 @@ const PropertyDetails = () => {
           </div>
         </div>
         
-        {/* Property Details */}
         <div className="container-custom mb-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Main Details */}
             <div className="md:col-span-2">
               <div className="bg-fawaz-darker p-8 rounded-lg mb-8">
                 <h2 className="text-2xl font-playfair font-semibold mb-6">
@@ -242,7 +234,7 @@ const PropertyDetails = () => {
                   )}
                   {property.sqft > 0 && (
                     <DetailItem 
-                      icon={<SquareFeet size={20} className="text-fawaz-gold" />}
+                      icon={<SquareIcon size={20} className="text-fawaz-gold" />}
                       label="Area"
                       value={`${property.sqft} sqft`}
                     />
@@ -272,7 +264,6 @@ const PropertyDetails = () => {
                 </ul>
               </div>
               
-              {/* Map placeholder */}
               <div className="bg-fawaz-darker p-8 rounded-lg">
                 <h2 className="text-2xl font-playfair font-semibold mb-6">
                   Location
@@ -292,9 +283,7 @@ const PropertyDetails = () => {
               </div>
             </div>
             
-            {/* Sidebar */}
             <div>
-              {/* Contact Agent */}
               <div className="bg-fawaz-darker p-8 rounded-lg mb-8">
                 <h2 className="text-2xl font-playfair font-semibold mb-6">
                   Interested in this property?
@@ -357,7 +346,6 @@ const PropertyDetails = () => {
                 </div>
               </div>
               
-              {/* Similar Properties */}
               <div className="bg-fawaz-darker p-8 rounded-lg">
                 <h2 className="text-2xl font-playfair font-semibold mb-6">
                   Similar Properties
