@@ -26,11 +26,16 @@ const TheValley = () => {
       {/* Hero Section with Background Video and Overlay */}
       <div className="relative h-[80vh] overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <img 
-          src="/lovable-uploads/55b5e92a-ad52-40e2-af95-7fae7e875755.png" 
-          alt="The Valley Development" 
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
           className="absolute inset-0 w-full h-full object-cover"
-        />
+        >
+          <source src="https://player.vimeo.com/external/517090025.hd.mp4?s=539faad12f040eb5afd8d5b3c3603561bc344cad&profile_id=175" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="container-custom relative z-20 h-full flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-6xl md:text-8xl font-playfair font-bold text-white mb-6 drop-shadow-lg">
             The Valley
