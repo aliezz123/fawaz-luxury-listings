@@ -1,18 +1,11 @@
-
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-fawaz-darker text-fawaz-light py-12 mt-12 border-t border-fawaz-gold/20">
+  return <footer className="bg-fawaz-darker text-fawaz-light py-12 mt-12 border-t border-fawaz-gold/20">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <img 
-              src="/lovable-uploads/3c5157bd-1f1a-4ea7-9ed4-b4a05b574621.png" 
-              alt="Fawaz Real Estate Logo" 
-              className="h-12 object-contain mb-4"
-            />
+            <img alt="Fawaz Real Estate Logo" className="h-12 object-contain mb-4" src="/lovable-uploads/3639a075-5165-46c2-a033-916f9c002ea9.png" />
             <p className="text-gray-400 mb-4">
               Discover premium residential, commercial, and land listings in Sierra Leone 
               backed by the trusted Fawaz name.
@@ -57,31 +50,30 @@ const Footer = () => {
           <p>&copy; {new Date().getFullYear()} Fawaz Real Estate. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
-const SocialLink = ({ href, icon }: { href: string; icon: React.ReactNode }) => {
-  return (
-    <a 
-      href={href} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="w-10 h-10 rounded-full bg-fawaz-gold/10 flex items-center justify-center hover:bg-fawaz-gold/20 transition-colors"
-    >
+const SocialLink = ({
+  href,
+  icon
+}: {
+  href: string;
+  icon: React.ReactNode;
+}) => {
+  return <a href={href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-fawaz-gold/10 flex items-center justify-center hover:bg-fawaz-gold/20 transition-colors">
       <span className="text-fawaz-gold">{icon}</span>
-    </a>
-  );
+    </a>;
 };
-
-const FooterLink = ({ to, children }: { to: string; children: React.ReactNode }) => {
-  return (
-    <li>
+const FooterLink = ({
+  to,
+  children
+}: {
+  to: string;
+  children: React.ReactNode;
+}) => {
+  return <li>
       <Link to={to} className="text-gray-400 hover:text-fawaz-gold transition-colors">
         {children}
       </Link>
-    </li>
-  );
+    </li>;
 };
-
 export default Footer;
